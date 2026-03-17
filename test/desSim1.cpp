@@ -28,11 +28,15 @@ class scheduler(){
 }
 
 class cpu (){
+	scheduler & sch;
+	event ev;
 	public:
 	    int mem_wr(){
+			sch.add_event(ev);
         	return 0; 
 	    }
 	    int mem_rd(){
+			sch.add_event(ev);
         	return 0; 
 	    }
 	private:
