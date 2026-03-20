@@ -1,6 +1,8 @@
-#include "iostreams"
-#include "string"
-#include "queue"
+#include <iostream>
+#include <string>
+#include <queue>
+
+using namespace std;
 
 struct event{
    int time; //global time
@@ -8,9 +10,9 @@ struct event{
    int alpha;  //time interval within time unit
    string src; //event src , for debug
    int (*fptr_cb)();        //callback function
-}
+};
 
-class scheduler(){
+class scheduler {
 	public:
 		int add_event(event & ev){
 			queue.add(ev);
@@ -43,7 +45,7 @@ class scheduler(){
 
 }
 
-class cpu (){
+class cpu {
 	scheduler & sch;
 	event ev;
 	mem & myMem;
@@ -77,7 +79,7 @@ class cpu (){
 	    int result;
 }
 
-class mem(){
+class mem{
 	public:
 	int mem_wr(int addr, int wr_data){
 	    mem_data[addr]= wr_data;	
